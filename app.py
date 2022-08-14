@@ -21,6 +21,7 @@ def create_script():
     #payload = json.loads(request.json)
     #tm = Template(templates.isolated_footer)
     #return tm.render(**payload)
+    return jsonify({"Message": "Connection Success"}), 200
 
 @app.route('/<id>}', methods=['PUT'])
 def create_script(id):
