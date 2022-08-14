@@ -26,7 +26,7 @@ def respond():
 @app.route('/add', methods=['POST'])
 def add_entry():
     payload = request.json
-    params = ["Sim_card_no","Mobile_no", "State_of_registration", "Expiry_date","KYC","Telecom_Provider","Full_name"]
+    params = ["Sim_card_no","Mobile_no", "Status","State_of_registration", "Expiry_date","KYC","Telecom_Provider","Full_name"]
     for param in params:
         if(param not in payload):
             return jsonify({'error': f'parameter {param}  missing in payload'}), 400 
