@@ -32,13 +32,11 @@ def add_entry():
             return jsonify({'error': f'parameter {param}  missing in payload'}), 400 
 
     entry = create_data(*[payload[param] for param in params])
-    global MOBILE_ENTRIES
     MOBILE_ENTRIES[payload["Sim_card_no"]]= entry
     return jsonify({"Message": "Entry Successful"}), 200
 
 @app.route('/listall', methods=['GET'])
 def list_entry():
-    global MOBILE_ENTRIES
     return jsonify(MOBILE_ENTRIES), 200
 
 @app.route('/<id>}', methods=['PUT'])
