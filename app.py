@@ -10,21 +10,21 @@ def respond():
     return jsonify({"Message": "Connection Success"}), 200
 
 @app.route('/add', methods=['POST'])
-def create_script():
+def add_entry():
     payload = json.loads(request.json)
     #tm = Template(templates.isolated_footer)
     #return tm.render(**payload)
     return json.dumps(payload)
 
 @app.route('/listall', methods=['GET'])
-def create_script():
+def list_entry():
     #payload = json.loads(request.json)
     #tm = Template(templates.isolated_footer)
     #return tm.render(**payload)
     return jsonify({"Message": "Connection Success"}), 200
 
 @app.route('/<id>}', methods=['PUT'])
-def create_script(id):
+def edit_entry(id):
     #payload = json.loads(request.json)
     #tm = Template(templates.isolated_footer)
     #return tm.render(**payload)
@@ -32,7 +32,7 @@ def create_script(id):
     return jsonify({"Message": "Connection Success"}), 200
 
 @app.route('/<id>', methods=['DELETE'])
-def create_script(id):
+def delete_entry(id):
     return json.dumps({'id':id}), 200
 
 if __name__ == '__main__':
