@@ -38,6 +38,7 @@ def add_entry():
 
 @app.route('/listall', methods=['GET'])
 def list_entry():
+    global MOBILE_ENTRIES
     return jsonify(MOBILE_ENTRIES), 200
 
 @app.route('/<id>}', methods=['PUT'])
