@@ -11,7 +11,7 @@ def respond():
 
 @app.route('/add', methods=['POST'])
 def add_entry():
-    payload = json.loads(request.json)
+    payload = request.json
     #tm = Template(templates.isolated_footer)
     #return tm.render(**payload)
     return json.dumps(payload)
