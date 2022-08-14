@@ -33,7 +33,7 @@ def add_entry():
 
     entry = create_data(*[payload[param] for param in params])
     global MOBILE_ENTRIES
-    MOBILE_ENTRIES[payload["Sim_card_no"]: entry]
+    MOBILE_ENTRIES[payload["Sim_card_no"]]= entry
     return jsonify({"Message": "Entry Successful"}), 200
 
 @app.route('/listall', methods=['GET'])
